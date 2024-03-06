@@ -13,7 +13,13 @@ pnpm add -D @wolves-league/eslint-config
 bun add -D @wolves-league/eslint-config
 ```
 
-Optionally you can separately install `eslint` as long as it's the version `8.21.0` or newer since this package uses the new `FlatConfig` which will be the default in ESLint version `9.0.0`.
+Optionally you can separately install `eslint` as long as it's the version `8.21.0` or *newer* as this package requires `FlatConfig`, which will become the default in ESLint version `9.0.0`.
+
+### If you use VSCode
+In `settings.json` add the following configuration:
+```json
+"eslint.experimental.useFlatConfig": true,
+```
 
 ### Node.js/Bun
 ```javascript
