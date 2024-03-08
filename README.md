@@ -25,30 +25,30 @@ In `settings.json` add the following configuration:
 ```javascript
 // eslint.config.js
 
-import wlgEslintConfig from '@wolves-league/eslint-config';
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
-export default wlgEslintConfig.configs.node;
+export default wlEslintConfig.configs.node;
 ```
 
 ### React
 ```javascript
 // eslint.config.js
 
-import wlgEslintConfig from '@wolves-league/eslint-config';
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
-export default wlgEslintConfig.configs.react;
+export default wlEslintConfig.configs.react;
 ```
 
 ### Next.js
 ```javascript
 // eslint.config.js
 
-import wlgEslintConfig from '@wolves-league/eslint-config';
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
-export default wlgEslintConfig.configs.next;
+export default wlEslintConfig.configs.next;
 ```
 
 The examples above use JSDoc annotations to provide type information which makes it easy to expand the configuration with autocomplete.
@@ -57,10 +57,10 @@ If you installed `eslint` separately you can use the type from the `eslint` pack
 ```javascript
 // eslint.config.js
 
-import wlgEslintConfig from '@wolves-league/eslint-config';
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('eslint').Linter.FlatConfig>} */
-export default wlgEslintConfig.configs.node;
+export default wlEslintConfig.configs.node;
 ```
 
 ### Expand the configuration
@@ -68,10 +68,10 @@ If you want to expand or override the configuration you can just spread the conf
 ```javascript
 // eslint.config.js
 
-import wlgEslintConfig from '@wolves-league/eslint-config';
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
-export default [...wlgEslintConfig.configs.node, {
+export default [...wlEslintConfig.configs.node, {
   rules: {
     semi: "error"
   }
