@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Linter } from 'eslint';
 
 declare module '@wolves-league/eslint-config' {
   export type Config = Linter.FlatConfig;
@@ -7,7 +7,7 @@ declare module '@wolves-league/eslint-config' {
       node: Config;
       react: Config;
       next: Config;
-    }
+    };
   }
 
   const wolvesLeagueEslintConfig: WolvesLeagueEslintConfig;
