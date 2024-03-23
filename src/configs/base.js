@@ -11,6 +11,12 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
+      globals: {
+        it: 'readonly',
+        expect: 'readonly',
+        describe: 'readonly',
+        process: 'readonly',
+      },
     },
     plugins: {
       'simple-import-sort': simpleImportSort,
