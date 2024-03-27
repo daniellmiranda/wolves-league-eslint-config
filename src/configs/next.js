@@ -1,3 +1,5 @@
+// @ts-check
+
 import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
 import tseslint from 'typescript-eslint';
