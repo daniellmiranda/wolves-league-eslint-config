@@ -1,19 +1,38 @@
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import reactHooks from 'eslint-plugin-react-hooks';
+// @ts-check
+
+import { FlatCompat } from '@eslint/eslintrc';
+import eslintReactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
+import eslintReactRecommended from 'eslint-plugin-react/configs/recommended.js';
 import globals from 'globals';
+import path from 'path';
 import tseslint from 'typescript-eslint';
+import { fileURLToPath } from 'url';
 
 import base from './base.js';
 
-export default tseslint.config(...base, {
-  plugins: { 'react-hooks': reactHooks, 'jsx-a11y': jsxA11y },
-  rules: {
-    ...reactHooks.configs.recommended.rules,
-    ...jsxA11y.configs.recommended.rules,
-  },
-  languageOptions: {
-    globals: {
-      ...globals.browser,
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+export default tseslint.config(
+  ...base,
+  ...compat.extends('plugin:react-hooks/recommended'),
+  ...compat.extends('plugin:jsx-a11y/recommended'),
+  eslintReactRecommended,
+  eslintReactJsxRuntime,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
-});
+);
