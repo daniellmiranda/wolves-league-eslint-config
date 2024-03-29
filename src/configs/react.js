@@ -29,6 +29,9 @@ export default tseslint.config(
         ...globals.browser,
       },
     },
+    rules: {
+      'react/prop-types': 'off',
+    },
     settings: {
       react: {
         version: 'detect',
