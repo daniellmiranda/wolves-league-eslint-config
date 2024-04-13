@@ -1,6 +1,7 @@
 // @ts-check
 
 import { FlatCompat } from '@eslint/eslintrc';
+import globals from 'globals';
 import path from 'path';
 import tseslint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
@@ -17,4 +18,11 @@ const compat = new FlatCompat({
 export default tseslint.config(
   ...react,
   ...compat.extends('plugin:@next/next/recommended'),
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
 );
