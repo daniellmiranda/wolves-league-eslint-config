@@ -4,14 +4,16 @@
 
 Install the package and ESLint as dev dependencies:
 
+##### NPM
 ```shell
-# NPM
 npm i -D @wolves-league/eslint-config eslint
-
-# PNPM
+```
+##### PNPM
+```shell
 pnpm add -D @wolves-league/eslint-config eslint
-
-# Bun
+```
+##### Bun
+```shell
 bun add -D @wolves-league/eslint-config eslint
 ```
 
