@@ -1,12 +1,17 @@
 {
   "name": "@wolves-league/eslint-config",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "dist/index.mjs",
   "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
+    "import": {
+      "types": "./src/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "require": {
+      "types": "./src/index.d.ts",
+      "require": "./dist/index.cjs"
+    }
   },
-  "types": "src/index.d.ts",
   "scripts": {
     "build": "rollup -c"
   },
