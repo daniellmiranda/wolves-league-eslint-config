@@ -6,16 +6,18 @@ Install the package and ESLint as dev dependencies:
 
 ##### NPM
 ```shell
-npm i -D @wolves-league/eslint-config eslint
+npm i -D @wolves-league/eslint-config eslint@8.57.0
 ```
 ##### PNPM
 ```shell
-pnpm add -D @wolves-league/eslint-config eslint
+pnpm add -D @wolves-league/eslint-config eslint@8.57.0
 ```
 ##### Bun
 ```shell
-bun add -D @wolves-league/eslint-config eslint
+bun add -D @wolves-league/eslint-config eslint@8.57.0
 ```
+
+**You need to install `eslint@8.57.0` because currently the plugins `eslint-plugin-react` and `next/eslint-plugin-next`** does not support ESLint v9. When these packages are fixed, this will not be necessary.
 
 ### If you use VSCode
 
@@ -30,7 +32,7 @@ In `settings.json` add the following configuration:
 `eslint.config.js`
 
 ```javascript
-import wlEslintConfig from "@wolves-league/eslint-config";
+import wlEslintConfig from '@wolves-league/eslint-config'; 
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
 export default wlEslintConfig.configs.node;
@@ -41,7 +43,7 @@ export default wlEslintConfig.configs.node;
 `eslint.config.js`
 
 ```javascript
-import wlEslintConfig from "@wolves-league/eslint-config";
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
 export default wlEslintConfig.configs.react;
@@ -52,7 +54,7 @@ export default wlEslintConfig.configs.react;
 `eslint.config.js`
 
 ```javascript
-import wlEslintConfig from "@wolves-league/eslint-config";
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
 export default wlEslintConfig.configs.next;
@@ -65,7 +67,7 @@ If you want to expand or override the configuration you can just spread the conf
 `eslint.config.js`
 
 ```javascript
-import wlEslintConfig from "@wolves-league/eslint-config";
+import wlEslintConfig from '@wolves-league/eslint-config';
 
 /** @type {Array<import('@wolves-league/eslint-config').Config>} */
 export default [
@@ -77,5 +79,13 @@ export default [
   },
 ];
 ```
-
 Refer to [ESLint official documentation](https://eslint.org/docs/latest/use/configure/configuration-files-new) for more information.
+
+### CommonJS
+If you need to use CommonJS, you can use the following configuration:
+```javascript
+/* eslint-disable @typescript-eslint/no-var-requires */
+const wlEslintConfig = require('@wolves-league/eslint-config');
+
+module.exports = wlEslintConfig.configs.react; // react | node | next
+```
