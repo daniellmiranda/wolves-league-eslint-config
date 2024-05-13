@@ -1,11 +1,13 @@
-import next from './configs/next.js';
-import node from './configs/node.js';
-import react from './configs/react.js';
+import next from './configs/next';
+import node from './configs/node';
+import react from './configs/react';
+import prettier from './configs/prettier';
 
 export default {
   configs: {
     node,
     react,
     next,
+    prettier,
   },
 };

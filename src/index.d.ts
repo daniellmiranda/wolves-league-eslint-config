@@ -1,15 +1,13 @@
-import type { Linter } from 'eslint';
+import { Linter } from 'eslint';
+import { Config as PrettierConfig } from 'prettier';
 
 declare module '@wolves-league/eslint-config' {
-  export type Config = Linter.FlatConfig;
-  export interface WolvesLeagueEslintConfig {
-    configs: {
-      node: Config;
-      react: Config;
-      next: Config;
-    };
+  export interface Config {
+    node: Linter.FlatConfig;
+    react: Linter.FlatConfig;
+    next: Linter.FlatConfig;
+    prettier: PrettierConfig;
   }
 
-  const wolvesLeagueEslintConfig: WolvesLeagueEslintConfig;
-  export default wolvesLeagueEslintConfig;
+  export const configs: Config;
 }
