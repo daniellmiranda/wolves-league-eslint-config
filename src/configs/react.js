@@ -1,5 +1,4 @@
-// @ts-check
-
+import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintReactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 import eslintReactRecommended from 'eslint-plugin-react/configs/recommended.js';
@@ -21,8 +20,8 @@ export default tseslint.config(
   ...base,
   ...compat.extends('plugin:react-hooks/recommended'),
   ...compat.extends('plugin:jsx-a11y/recommended'),
-  eslintReactRecommended,
-  eslintReactJsxRuntime,
+  ...fixupConfigRules(eslintReactRecommended),
+  ...fixupConfigRules(eslintReactJsxRuntime),
   {
     languageOptions: {
       globals: {

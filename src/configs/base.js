@@ -5,7 +5,8 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import prettierConfig from './prettier';
+
+import prettierConfig from './prettier.js';
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -23,10 +24,7 @@ export default tseslint.config(
       'simple-import-sort': simpleImportSort,
     },
     rules: {
-      'prettier/prettier': [
-        'error',
-        prettierConfig,
-      ],
+      'prettier/prettier': ['error', prettierConfig],
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
     },

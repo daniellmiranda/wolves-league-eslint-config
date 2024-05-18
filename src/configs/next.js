@@ -1,5 +1,4 @@
-// @ts-check
-
+import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import globals from 'globals';
 import path from 'path';
@@ -17,7 +16,7 @@ const compat = new FlatCompat({
 
 export default tseslint.config(
   ...react,
-  ...compat.extends('plugin:@next/next/recommended'),
+  ...fixupConfigRules(...compat.extends('plugin:@next/next/recommended')),
   {
     languageOptions: {
       globals: {

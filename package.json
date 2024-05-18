@@ -1,7 +1,8 @@
 {
   "name": "@wolves-league/eslint-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.mjs",
+  "type": "module",
   "exports": {
     "import": {
       "types": "./src/index.d.ts",
@@ -22,14 +23,10 @@
     "rollup": "^4.17.2"
   },
   "peerDependencies": {
-    "eslint": "8.57.0"
-  },
-  "peerDependenciesMeta": {
-    "eslint": {
-      "supports": "8.57.0"
-    }
+    "eslint": ">=8.57.0"
   },
   "dependencies": {
+    "@eslint/compat": "^1.0.1",
     "@next/eslint-plugin-next": "^14.2.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -38,6 +35,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "globals": "^15.2.0",
-    "typescript-eslint": "^7.8.0"
+    "typescript-eslint": "^7.9.0"
   }
 }
