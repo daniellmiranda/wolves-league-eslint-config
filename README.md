@@ -1,4 +1,4 @@
-# Wolves League ESLint config
+# 🐺 Wolves League ESLint config
 
 ## Setup
 
@@ -7,27 +7,30 @@ Install the package and ESLint as dev dependencies:
 ##### NPM
 
 ```shell
-npm i -D @wolves-league/eslint-config eslint
+npm i -D @wolves-league/eslint-config eslint@8.57.0
 ```
 
 ##### PNPM
 
 ```shell
-pnpm add -D @wolves-league/eslint-config eslint
+pnpm add -D @wolves-league/eslint-config eslint@8.57.0
 ```
 
 ##### Bun
 
 ```shell
-bun add -D @wolves-league/eslint-config eslint
+bun add -D @wolves-league/eslint-config eslint@8.57.0
 ```
+
+> [!WARNING]
+> Since ESLint v9 introduces breaking changes, third-party libraries that this package depends on will take time to be updated. For that reason, you need to temporarily install ESLint v8.57.0.
 
 ### If you use VSCode
 
 In `settings.json` add the following configuration:
 
 ```json
-"eslint.experimental.useFlatConfig": true,
+"eslint.useFlatConfig": true,
 ```
 
 ### Node.js/Bun
