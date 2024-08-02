@@ -7,23 +7,20 @@ Install the package and ESLint as dev dependencies:
 ##### NPM
 
 ```shell
-npm i -D @wolves-league/eslint-config eslint@8.57.0
+npm i -D @wolves-league/eslint-config eslint
 ```
 
 ##### PNPM
 
 ```shell
-pnpm add -D @wolves-league/eslint-config eslint@8.57.0
+pnpm add -D @wolves-league/eslint-config eslint
 ```
 
 ##### Bun
 
 ```shell
-bun add -D @wolves-league/eslint-config eslint@8.57.0
+bun add -D @wolves-league/eslint-config eslint
 ```
-
-> [!WARNING]
-> Since ESLint v9 introduces breaking changes, third-party libraries that this package depends on will take time to be updated. For that reason, you need to temporarily install ESLint v8.57.0.
 
 ### If you use VSCode
 
