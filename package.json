@@ -23,7 +23,7 @@
     "rollup": "^4.21.3"
   },
   "peerDependencies": {
-    "eslint": "8.57.0"
+    "eslint": ">8.57.0"
   },
   "dependencies": {
     "@eslint/compat": "^1.1.1",
