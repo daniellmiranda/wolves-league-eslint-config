@@ -2,6 +2,7 @@ import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintReactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 import eslintReactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import eslintPluginReactCompiler from 'eslint-plugin-react-compiler';
 import globals from 'globals';
 import path from 'path';
 import tseslint from 'typescript-eslint';
@@ -27,6 +28,9 @@ export default tseslint.config(
       globals: {
         ...globals.browser,
       },
+    },
+    plugins: {
+      eslintPluginReactCompiler,
     },
     rules: {
       'react/prop-types': 'off',
