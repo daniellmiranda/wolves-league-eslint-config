@@ -1,9 +1,11 @@
 {
   "name": "@wolves-league/eslint-config",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/index.mjs",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     "import": {
       "types": "./src/index.d.ts",
@@ -19,24 +21,24 @@
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/node": "22.8.1",
+    "@types/node": "22.9.0",
     "prettier": "^3.3.3",
-    "rollup": "^4.24.1"
+    "rollup": "^4.27.2"
   },
   "peerDependencies": {
     "eslint": ">8.57.0"
   },
   "dependencies": {
-    "@eslint/compat": "^1.2.1",
-    "@next/eslint-plugin-next": "^15.0.1",
+    "@eslint/compat": "^1.2.3",
+    "@next/eslint-plugin-next": "^15.0.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-compiler": "19.0.0-beta-8a03594-20241020",
+    "eslint-plugin-react-compiler": "19.0.0-beta-a7bf2bd-20241110",
     "eslint-plugin-react-hooks": "5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "globals": "^15.11.0",
-    "typescript-eslint": "^8.11.0"
+    "globals": "^15.12.0",
+    "typescript-eslint": "^8.14.0"
   }
 }
