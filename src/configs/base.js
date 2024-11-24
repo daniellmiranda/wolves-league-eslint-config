@@ -4,6 +4,7 @@ import eslint from '@eslint/js';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -19,7 +20,7 @@ export default tseslint.config(
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
-      }
+      },
     },
     plugins: {
       'simple-import-sort': simpleImportSort,
@@ -33,6 +34,7 @@ export default tseslint.config(
     files: ['**/*.cjs'],
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
-    }
+    },
   },
+  eslintConfigPrettier,
 );
