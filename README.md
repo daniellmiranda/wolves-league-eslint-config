@@ -97,20 +97,3 @@ const wlConfig = require("@wolves-league/eslint-config");
 
 module.exports = wlConfig.configs.react; // react | node | next
 ```
-
-### Override or Extend Prettier Configuration
-
-If you need to override or extend the Prettier configuration, you can create a `prettier.config.js` file in the root of your project. The following code is an example of extending the Prettier configuration with `prettier-plugin-tailwindcss`:
-
-`prettier.config.js`
-
-```javascript
-import wlConfig from "@wolves-league/eslint-config";
-
-/** @type {import('@wolves-league/eslint-config').Config['prettier']} */
-export default {
-  ...wlConfig.configs.prettier, // Omit this line to use the default Prettier configuration
-  plugins: ["prettier-plugin-tailwindcss"],
-  // Add your custom rules and settings here
-};
-```

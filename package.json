@@ -22,7 +22,6 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "22.9.0",
-    "prettier": "^3.3.3",
     "rollup": "^4.27.2"
   },
   "peerDependencies": {
@@ -31,9 +30,7 @@
   "dependencies": {
     "@eslint/compat": "^1.2.3",
     "@next/eslint-plugin-next": "^15.0.3",
-    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-compiler": "19.0.0-beta-a7bf2bd-20241110",
     "eslint-plugin-react-hooks": "5.0.0",
