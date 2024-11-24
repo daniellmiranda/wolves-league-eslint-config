@@ -17,6 +17,7 @@ const compat = new FlatCompat({
 export default tseslint.config(
   ...react,
   ...fixupConfigRules(...compat.extends('plugin:@next/next/recommended')),
+  ...fixupConfigRules(...compat.extends('plugin:@next/next/core-web-vitals')),
   {
     languageOptions: {
       globals: {

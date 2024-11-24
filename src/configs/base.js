@@ -5,12 +5,10 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-import prettierConfig from './prettier.js';
-
 export default tseslint.config(
   eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.stylistic,
+  tseslint.configs.recommendedTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
   {
     languageOptions: {
       ecmaVersion: 'latest',
@@ -18,14 +16,23 @@ export default tseslint.config(
         ...globals.commonjs,
         ...globals.jest,
       },
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      }
     },
     plugins: {
       'simple-import-sort': simpleImportSort,
     },
     rules: {
-      'prettier/prettier': ['error', prettierConfig],
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
     },
+  },
+  {
+    files: ['**/*.cjs'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    }
   },
 );

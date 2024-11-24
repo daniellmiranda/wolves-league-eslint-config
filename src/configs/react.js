@@ -1,38 +1,35 @@
-import { fixupConfigRules } from '@eslint/compat';
-import { FlatCompat } from '@eslint/eslintrc';
-import eslintReactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
-import eslintReactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import react from 'eslint-plugin-react';
 import eslintPluginReactCompiler from 'eslint-plugin-react-compiler';
+import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
-import path from 'path';
 import tseslint from 'typescript-eslint';
-import { fileURLToPath } from 'url';
 
 import base from './base.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
 export default tseslint.config(
   ...base,
-  ...compat.extends('plugin:react-hooks/recommended'),
-  ...compat.extends('plugin:jsx-a11y/recommended'),
-  ...fixupConfigRules(eslintReactRecommended),
-  ...fixupConfigRules(eslintReactJsxRuntime),
+  jsxA11y.flatConfigs.recommended,
+  react.configs.flat.recommended,
+  react.configs.flat['jsx-runtime'],
+
   {
     languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
       globals: {
         ...globals.browser,
       },
     },
     plugins: {
+      'react-hooks': reactHooks,
       eslintPluginReactCompiler,
     },
     rules: {
+      ...reactHooks.configs.recommended.rules,
       'react/prop-types': 'off',
     },
     settings: {
