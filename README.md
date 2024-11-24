@@ -95,7 +95,7 @@ module.exports = wlConfig.configs.react; // react | node | next
 
 ### Prettier Configuration
 
-To use Prettier, simply create a `prettier.config.js` file in the root of your project and export the config:
+To use Prettier, simply create a `prettier.config.mjs` file in the root of your project and export the config:
 
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
@@ -108,8 +108,8 @@ export default wlConfig.configs.prettier;
 If you need to override or extend the Prettier configuration, spread the config object and add any rule you want. Alternatively, you can ignore the config and use your own.
 
 The following code is an example of extending the Prettier configuration with `prettier-plugin-tailwindcss`:
-`prettier.config.js`
 
+`prettier.config.mjs`
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
 
