@@ -118,6 +118,7 @@ The following code is an example of extending the Prettier configuration with `p
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
 
+/** @type {import('prettier').Config} */
 export default {
   ...wlConfig.configs.prettier, // Omit this line to use the default Prettier configuration and/or use your own
   plugins: ['prettier-plugin-tailwindcss'],
