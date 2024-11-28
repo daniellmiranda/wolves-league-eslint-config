@@ -8,11 +8,11 @@
   ],
   "exports": {
     "import": {
-      "types": "./src/index.d.ts",
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
     },
     "require": {
-      "types": "./src/index.d.ts",
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs"
     }
   },
@@ -23,7 +23,8 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "22.9.3",
     "prettier": "^3.3.3",
-    "rollup": "^4.27.4"
+    "rollup": "^4.27.4",
+    "rollup-plugin-dts": "^6.1.1"
   },
   "peerDependencies": {
     "eslint": ">8.57.0",

@@ -37,6 +37,7 @@ In `settings.json` add the following configuration:
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
 
+/** @type {Array<import('eslint').Linter.Config>} */
 export default wlConfig.configs.node;
 ```
 
@@ -47,6 +48,7 @@ export default wlConfig.configs.node;
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
 
+/** @type {Array<import('eslint').Linter.Config>} */
 export default wlConfig.configs.react;
 ```
 
@@ -57,6 +59,7 @@ export default wlConfig.configs.react;
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
 
+/** @type {Array<import('eslint').Linter.Config>} */
 export default wlConfig.configs.next;
 ```
 
@@ -69,6 +72,7 @@ If you want to extend or override the configuration you can just spread the conf
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
 
+/** @type {Array<import('eslint').Linter.Config>} */
 export default [
   ...wlConfig.configs.node,
   {
@@ -90,6 +94,7 @@ If you need to use CommonJS, you can use the following configuration:
 ```javascript
 const wlConfig = require('@wolves-league/eslint-config');
 
+/** @type {Array<import('eslint').Linter.Config>} */
 module.exports = wlConfig.configs.react; // react | node | next
 ```
 
@@ -99,7 +104,7 @@ To use Prettier, simply create a `prettier.config.mjs` file in the root of your 
 
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
-
+/** @type {import('prettier').Config} */
 export default wlConfig.configs.prettier;
 ```
 
