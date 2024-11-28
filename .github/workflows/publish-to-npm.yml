@@ -6,25 +6,42 @@ on:
 
 jobs:
   publish:
-    name: Publish to NPM
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
         with:
-          bun-version: latest
+          version: 9
+          run_install: false
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          registry-url: https://registry.npmjs.org/
+
+      - name: Get PNPM store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        name: Setup PNPM cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
-        run: bun install
+        run: pnpm install --frozen-lockfile
 
-      - name: Build package
-        run: bun run build
+      - name: Build the package
+        run: pnpm run build
 
-      - name: Publish to NPM
+      - name: Publish
+        run: pnpm publish --access public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_CONFIG_TOKEN }}
-        run: bun publish --access public
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
