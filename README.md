@@ -90,7 +90,6 @@ Refer to [ESLint official documentation](https://eslint.org/docs/latest/use/conf
 If you need to use CommonJS, you can use the following configuration:
 
 `eslint.config.cjs`
-
 ```javascript
 const wlConfig = require('@wolves-league/eslint-config');
 
@@ -104,6 +103,7 @@ To use Prettier, simply create a `prettier.config.mjs` file in the root of your 
 
 ```javascript
 import wlConfig from '@wolves-league/eslint-config';
+
 /** @type {import('prettier').Config} */
 export default wlConfig.configs.prettier;
 ```
