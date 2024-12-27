@@ -3,8 +3,8 @@ import reactPlugin from 'eslint-plugin-react';
 import reactCompiler from 'eslint-plugin-react-compiler';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
-
 import { ConfigArray, ConfigWithExtends } from 'typescript-eslint';
+
 import { baseConfig } from './base';
 
 export const reactConfig: ConfigArray = [

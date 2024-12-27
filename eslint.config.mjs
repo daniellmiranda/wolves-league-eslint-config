@@ -1,4 +1,4 @@
-import wolvesLeague from './src/index.js';
+import wolvesLeague from './dist/index.js';
 
 /** @type {Array<import('eslint').Linter.Config>} */
-export default [{ files: ['src/**/*.js'] }, wolvesLeague.configs.node];
+export default wolvesLeague.configs.node;

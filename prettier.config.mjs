@@ -1,3 +1,3 @@
-import wolvesLeague from './src/index.js';
+import wolvesLeague from './dist/index.js';
 
 export default wolvesLeague.configs.prettier;
