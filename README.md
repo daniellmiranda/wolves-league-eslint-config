@@ -52,17 +52,6 @@ import wlConfig from '@wolves-league/eslint-config';
 export default wlConfig.configs.react;
 ```
 
-### Next.js
-
-`eslint.config.mjs`
-
-```javascript
-import wlConfig from '@wolves-league/eslint-config';
-
-/** @type {Array<import('eslint').Linter.Config>} */
-export default wlConfig.configs.next;
-```
-
 ### Extend the configuration
 
 If you want to extend or override the configuration you can just spread the config inside an array, and add configuration objects:
@@ -94,7 +83,7 @@ If you need to use CommonJS, you can use the following configuration:
 const wlConfig = require('@wolves-league/eslint-config');
 
 /** @type {Array<import('eslint').Linter.Config>} */
-module.exports = wlConfig.configs.react; // react | node | next
+module.exports = wlConfig.configs.react; // react | node
 ```
 
 ### Prettier Configuration

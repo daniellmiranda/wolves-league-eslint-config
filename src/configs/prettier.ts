@@ -1,5 +1,6 @@
-/** @type {import("prettier").Config} */
-export default {
+import type { Config } from 'prettier';
+
+export const prettierConfig: Config = {
   endOfLine: 'auto',
   printWidth: 80,
   semi: true,

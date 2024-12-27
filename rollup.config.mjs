@@ -1,8 +1,9 @@
+import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 
 export default [
   {
-    input: './src/index.js',
+    input: './src/index.ts',
     output: [
       {
         file: 'dist/index.mjs',
@@ -13,6 +14,6 @@ export default [
         format: 'cjs',
       },
     ],
-    plugins: [terser()],
+    plugins: [typescript(), terser()],
   },
 ];

@@ -1,18 +1,17 @@
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import react from 'eslint-plugin-react';
-import eslintPluginReactCompiler from 'eslint-plugin-react-compiler';
+import reactPlugin from 'eslint-plugin-react';
+import reactCompiler from 'eslint-plugin-react-compiler';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
 
-import base from './base.js';
+import { ConfigArray, ConfigWithExtends } from 'typescript-eslint';
+import { baseConfig } from './base';
 
-export default tseslint.config(
-  ...base,
+export const reactConfig: ConfigArray = [
+  ...baseConfig,
   jsxA11y.flatConfigs.recommended,
-  react.configs.flat.recommended,
-  react.configs.flat['jsx-runtime'],
-
+  reactPlugin.configs.flat!.recommended as ConfigWithExtends,
+  reactPlugin.configs.flat!['jsx-runtime'] as ConfigWithExtends,
   {
     languageOptions: {
       parserOptions: {
@@ -26,10 +25,11 @@ export default tseslint.config(
     },
     plugins: {
       'react-hooks': reactHooks,
-      eslintPluginReactCompiler,
+      'react-compiler': reactCompiler,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      'react-compiler/react-compiler': 'error',
       'react/prop-types': 'off',
     },
     settings: {
@@ -38,4 +38,4 @@ export default tseslint.config(
       },
     },
   },
-);
+];
