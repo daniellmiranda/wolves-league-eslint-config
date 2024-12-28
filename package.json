@@ -1,6 +1,10 @@
 {
   "name": "@wolves-league/eslint-config",
   "version": "1.4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniellmiranda/wolves-league-eslint-config"
+  },
   "main": "dist/index.mjs",
   "type": "module",
   "exports": {
